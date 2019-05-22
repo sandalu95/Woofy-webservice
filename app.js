@@ -11,6 +11,8 @@ mongoose.connect('mongodb+srv://node-shop:' + process.env.MONGO_ATLAS_PW + '@nod
   useNewUrlParser:true
 });
 
+mongoose.Promise = global.Promise;
+
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
